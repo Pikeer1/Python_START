@@ -8,3 +8,11 @@
 4
 [1, 2, 6, 24]
 """
+
+n = int(input("Введите натуральное число: "))
+new_list = []
+factorial = 1
+for j in range(1, n + 1):
+    factorial *= j
+    new_list.append(factorial)
+print(new_list)
