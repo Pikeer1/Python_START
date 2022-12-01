@@ -16,3 +16,8 @@
 3
 6.62
 """
+
+n = int(input("Введите число n: "))
+my_list = [round((1 + 1 / i) ** i, 2) for i in range(1, n + 1)]
+print(f"Последовательность: {my_list}\nСумма: {round(sum(my_list), 2)}")
+
