@@ -11,3 +11,10 @@
 0.56
 11
 """
+
+number = float(input("Введите вещественное число: "))
+amount = 0
+for j in str(number):
+    if j != "." and j != ",":
+        amount += int(j)
+print(amount)
