@@ -15,6 +15,6 @@
 number = float(input("Введите вещественное число: "))
 amount = 0
 for j in str(number):
-    if j != "." and j != ",":
+    if j != "." != ",":
         amount += int(j)
 print(amount)
