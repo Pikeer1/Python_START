@@ -11,3 +11,10 @@
 [5, 1, 5, 2, 7, 11]
 14
 """
+
+from random import randint
+
+rand_numbers = [randint(1, 15) for i in range(6)]
+amount = sum(rand_numbers[1::2])
+print(f"Сгенерированный список: {rand_numbers}")
+print(f"Сумма элементов с нечетными индексами: {amount}")
