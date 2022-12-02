@@ -14,4 +14,12 @@
 [12, 15]
 """
 
+from random import randint
 
+number = int(input("Задайте размерность списка: "))
+first_list = [randint(1, 8) for i in range(number)]
+second_list = []
+for i in range(0, (number + 1) // 2):
+    second_list.append(first_list[i] * first_list[-i - 1])
+print(f"Сгенерированный список: {first_list}")
+print(f"Итоговый список: {second_list}")
