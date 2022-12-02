@@ -15,13 +15,36 @@ from random import randint
 
 max_value = 100
 k = int(input('Введите коэффициент: '))
-koef = [randint(0, max_value) for i in range(k)] + [randint(1, max_value)]
-polynom = ' + '.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(koef) if j][::-1])
-polynom = polynom.replace('x^1+', 'x+')
-polynom = polynom.replace('x^0', '')
-polynom += ('', '1')[polynom[-1] == '+']
-polynom = (polynom, polynom[:-2])[polynom[-2:] == '^1']
-print(polynom)
+
+
+def get_rand(num):
+    mult = [randint(0, max_value) for i in range(num)] + [randint(1, max_value)]
+    return mult
+
+
+def get_poly(num, multi):
+    polynom = ' + '.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(multi) if j][::-1])
+    polynom = polynom.replace('x^1+', 'x+')
+    polynom = polynom.replace('x^0', '')
+    polynom += ('', '1')[polynom[-1] == '+']
+    polynom = (polynom, polynom[:-2])[polynom[-2:] == '^1']
+    return polynom
+
+
+multiple = get_rand(k)
+polynom1 = get_poly(k, multiple)
+print(polynom1)
 
 with open('task3.txt', 'w') as data:
-    data.write(polynom)
+    data.write(polynom1)
+
+# Многочлен для следующей задачи:
+
+k = int(input('Введите коэффициент: '))
+
+multiple = get_rand(k)
+polynom2 = get_poly(k, multiple)
+print(polynom2)
+
+with open('task3_4.txt', 'w') as data:
+    data.write(polynom2)
