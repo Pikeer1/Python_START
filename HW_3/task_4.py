@@ -15,3 +15,9 @@
 10
 """
 
+num = int(input("Введите целое десятичное число: "))
+double_num = ''
+while num > 0:
+    double_num = str(num % 2) + double_num
+    num //= 2
+print(f"Введенное число в двоичной системе: {double_num}")
