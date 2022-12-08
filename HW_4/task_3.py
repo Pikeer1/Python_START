@@ -11,40 +11,51 @@
 2x^2 + 4x + 5 = 0
 """
 
-from random import randint
-
-max_value = 100
-k = int(input('Введите коэффициент: '))
+from random import randrange
+from os import path, mkdir, chdir
 
 
-def get_rand(num):
-    mult = [randint(0, max_value) for i in range(num)] + [randint(1, max_value)]
-    return mult
+def create_poly(list_koef):
+    i = len(list_koef) - 1
+    new_poly = ""
+    plus = False
+    for num in list_koef:
+        if num:
+            if plus:
+                new_poly += " + "
+            else:
+                plus = True
+
+            if i > 1:
+                new_poly += f"{'' if num == 1 else num}x^{i}"
+            elif i == 1:
+                new_poly += f"{'' if num == 1 else num}x"
+            else:
+                new_poly += f"{num}"
+
+        i -= 1
+    if not new_poly:
+        new_poly += "0 = 0"
+    else:
+        new_poly += " =0"
+    return new_poly
 
 
-def get_poly(num, multi):
-    polynom = ' + '.join([f'{(j, "")[j == 1]}x^{i}' for i, j in enumerate(multi) if j][::-1])
-    polynom = polynom.replace('x^1+', 'x+')
-    polynom = polynom.replace('x^0', '')
-    polynom += ('', '1')[polynom[-1] == '+']
-    polynom = (polynom, polynom[:-2])[polynom[-2:] == '^1']
-    return polynom
+if __name__ == '__main__':
+    k = int(input("Введите степень k: "))
+    polynom = [randrange(101) for i in range(k + 1)]
+    string_poly = create_poly(polynom)
+    print(string_poly)
 
-
-multiple = get_rand(k)
-polynom1 = get_poly(k, multiple)
-print(polynom1)
-
-with open('task3.txt', 'w') as data:
-    data.write(polynom1)
-
-# Многочлен для следующей задачи:
-
-k = int(input('Введите коэффициент: '))
-
-multiple = get_rand(k)
-polynom2 = get_poly(k, multiple)
-print(polynom2)
-
-with open('task3_4.txt', 'w') as data:
-    data.write(polynom2)
+    if not path.isdir("polynom"):
+        mkdir("polynom")
+    chdir("polynom")
+    i = 0
+    while True:
+        if not path.isfile(f"polynom_{i}.txt"):
+            with open(f"polynom_{i}.txt", 'w') as file:
+                file.write(string_poly)
+                print(f"Результат в файле polynom_{i}.txt")
+            break
+        else:
+            i += 1
