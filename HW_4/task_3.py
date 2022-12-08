@@ -15,37 +15,37 @@ from random import randrange
 from os import path, mkdir, chdir
 
 
-def create_poly(list_koef):
-    i = len(list_koef) - 1
-    new_poly = ""
+def create_polynom(list_k):
+    i = len(list_k) - 1
+    new_polynom = ""
     plus = False
-    for num in list_koef:
+    for num in list_k:
         if num:
             if plus:
-                new_poly += " + "
+                new_polynom += " + "
             else:
                 plus = True
 
             if i > 1:
-                new_poly += f"{'' if num == 1 else num}x^{i}"
+                new_polynom += f"{'' if num == 1 else num}x^{i}"
             elif i == 1:
-                new_poly += f"{'' if num == 1 else num}x"
+                new_polynom += f"{'' if num == 1 else num}x"
             else:
-                new_poly += f"{num}"
+                new_polynom += f"{num}"
 
         i -= 1
-    if not new_poly:
-        new_poly += "0 = 0"
+    if not new_polynom:
+        new_polynom += "0 = 0"
     else:
-        new_poly += " =0"
-    return new_poly
+        new_polynom += " =0"
+    return new_polynom
 
 
 if __name__ == '__main__':
     k = int(input("Введите степень k: "))
     polynom = [randrange(101) for i in range(k + 1)]
-    string_poly = create_poly(polynom)
-    print(string_poly)
+    str_polynom = create_polynom(polynom)
+    print(str_polynom)
 
     if not path.isdir("polynom"):
         mkdir("polynom")
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     while True:
         if not path.isfile(f"polynom_{i}.txt"):
             with open(f"polynom_{i}.txt", 'w') as file:
-                file.write(string_poly)
+                file.write(str_polynom)
                 print(f"Результат в файле polynom_{i}.txt")
             break
         else:
