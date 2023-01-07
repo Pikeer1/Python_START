@@ -1,6 +1,6 @@
 {
   "last_id": {
-    "id": 9
+    "id": 10
   },
   "items": [
     {
@@ -89,6 +89,14 @@
       "birthday": "01.02.1995",
       "workplace": "Вахтер",
       "id": 9
+    },
+    {
+      "first_name": "Иван",
+      "last_name": "Иванов",
+      "phone_number": "89000000000",
+      "birthday": "12.12.80",
+      "workplace": "Завод",
+      "id": 10
     }
   ]
 }
