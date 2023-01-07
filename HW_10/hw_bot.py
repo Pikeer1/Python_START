@@ -18,7 +18,7 @@ async def get_calc(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f'Результат: {sum_polynom(data, data1)}')
 
 
-my_token = "5807651404:AAHL2ysrkFqlODCmk_snxneYfKQtizr3D1g"
+my_token = "input token here"
 app = ApplicationBuilder().token(my_token).build()
 app.add_handler(CommandHandler("start", hello))
 app.add_handler(CommandHandler("calc", get_calc))
