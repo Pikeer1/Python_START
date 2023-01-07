@@ -1,0 +1,94 @@
+{
+  "last_id": {
+    "id": 9
+  },
+  "items": [
+    {
+      "id": 1,
+      "first_name": "Виктор",
+      "last_name": "Иванов",
+      "birthday": "20.02.1976",
+      "workplace": "ООО Рога и Копыта",
+      "phone_number": [
+        "89035554121"
+      ]
+    },
+    {
+      "first_name": "Ирина",
+      "last_name": "Никитина",
+      "phone_number": [
+        "89654875420",
+        "89362017497"
+      ],
+      "birthday": "02.04.1992",
+      "workplace": "Озон",
+      "id": 2
+    },
+    {
+      "first_name": "Петр",
+      "last_name": "Петров",
+      "phone_number": [
+        "89745100047"
+      ],
+      "birthday": "14.05.1950",
+      "workplace": "пенсионер",
+      "id": 3
+    },
+    {
+      "first_name": "Андрей",
+      "last_name": "Кондратьев",
+      "phone_number": [
+        "89601242295"
+      ],
+      "birthday": "22.12.1974",
+      "workplace": "Яндекс",
+      "id": 4
+    },
+    {
+      "first_name": "Екатерина",
+      "last_name": "Павлова",
+      "phone_number": [
+        "89632587401"
+      ],
+      "birthday": "10.06.1980",
+      "workplace": "Банк Денежка",
+      "id": 5
+    },
+    {
+      "first_name": "Павел",
+      "last_name": "Красильников",
+      "phone_number": [
+        "89054412290"
+      ],
+      "birthday": "20.12.1997",
+      "workplace": "Парикмахерская",
+      "id": 6
+    },
+    {
+      "first_name": "Михаил",
+      "last_name": "Никонов",
+      "phone_number": [
+        "88126523307"
+      ],
+      "birthday": "01.07.1972",
+      "workplace": "Ауди Рус",
+      "id": 7
+    },
+    {
+      "first_name": "Наталья",
+      "last_name": "Иванова",
+      "phone_number": "89135474714",
+      "birthday": "10.04.1980",
+      "workplace": "Преподаватель",
+      "id": 8
+    },
+    {
+      "first_name": "Виктор",
+      "last_name": "Петров",
+      "phone_number": "89995554477",
+      "birthday": "01.02.1995",
+      "workplace": "Вахтер",
+      "id": 9
+    }
+  ]
+}
